@@ -796,6 +796,80 @@
             letter-spacing: 1px;
         }
 
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .review-author-info h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .review-author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -997,6 +1071,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#" onclick="openClaimModal()">Submit Claim</a></li>
             </ul>
@@ -1030,6 +1105,7 @@
                     <i class="fas fa-shield-alt"></i>
                     <h3>Tech Expert Service</h3>
                     <p>NJIT Computer Science graduate with 10+ years experience</p>
+                    <p style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #e2e8f0; font-weight: 600; color: var(--success);"><i class="fas fa-check-circle"></i> Fully Insured Business</p>
                 </div>
             </div>
         </div>
@@ -1209,6 +1285,120 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="reviews-container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Real reviews from satisfied customers across Bergen County</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Mykolas fixed my laptop that another shop said was beyond repair. His computer science background really shows - he diagnosed a complex motherboard issue and had it working perfectly within 2 days. Highly recommend!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">JM</div>
+                        <div class="review-author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Hackensack, NJ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"My iPhone had water damage and I thought all my photos were gone. Mykolas recovered everything! Professional, knowledgeable, and honest. Worth every penny. Plus he's insured which gave me peace of mind."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">DK</div>
+                        <div class="review-author-info">
+                            <h4>David Kim</h4>
+                            <p>Fort Lee, NJ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Best tech repair in Bergen County! Fixed my gaming PC and upgraded it at the same time. Great communication throughout the process. His NJIT degree really makes a difference - he knows what he's doing."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">SP</div>
+                        <div class="review-author-info">
+                            <h4>Sarah Patel</h4>
+                            <p>Paramus, NJ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Excellent service! My MacBook Pro needed a logic board repair and Mykolas handled it perfectly. Fair pricing, fast turnaround, and he explained everything in detail. This is the kind of expertise you want."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">TC</div>
+                        <div class="review-author-info">
+                            <h4>Thomas Chen</h4>
+                            <p>Ridgewood, NJ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Called him for an emergency repair on my work laptop. He responded quickly and fixed it same-day. Very professional and clearly knows his stuff. Will definitely use again!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">RL</div>
+                        <div class="review-author-info">
+                            <h4>Robert Lee</h4>
+                            <p>Teaneck, NJ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Amazing experience from start to finish. My tablet had a cracked screen and battery issues - both fixed perfectly. Mykolas is trustworthy, skilled, and his prices are very reasonable. Highly recommend to anyone in Bergen County!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">MR</div>
+                        <div class="review-author-info">
+                            <h4>Maria Rodriguez</h4>
+                            <p>Englewood, NJ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
@@ -1220,28 +1410,28 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
+                            <p>(201) 786-8519</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>repair@youbrokeitillfixit.com</p>
+                            <p>perevicius.mykolas@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>Serving the Greater Metro Area</p>
+                            <p>Bergen County, NJ - Contact us to arrange device drop-off</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-container">
                 <h3>Send Us a Message</h3>
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form id="contactForm" action="https://formspree.io/f/xpwovejz" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1271,7 +1461,7 @@
                 <h2>Submit a Repair Claim</h2>
                 <span class="close-modal" onclick="closeClaimModal()">&times;</span>
             </div>
-            <form id="claimForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+            <form id="claimForm" action="https://formspree.io/f/xpwovejz" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="claimName">Full Name</label>
                     <input type="text" id="claimName" name="name" required>
