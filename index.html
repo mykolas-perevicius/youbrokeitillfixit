@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouBrokeIt-I'llFixIt LLC | Tech Repair Services by Mykolas Perevicius</title>
-    <meta name="description" content="Expert technology and electronics repair by Mykolas Perevicius, NJIT Computer Science graduate. 10+ years experience. Fast, reliable repairs backed by deep technical expertise.">
+    <title>Mykolas Perevicius | Tech Repair Engineer | NJIT CS Grad | Bergen County NJ</title>
+    <meta name="description" content="NJIT Computer Science graduate fixes devices others can't. Component-level repair, data recovery, same-day service. Free diagnosis. 10+ years experience in Bergen County, NJ.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Device Dead? This Engineer Will Fix It">
+    <meta property="og:description" content="NJIT CS graduate with 10+ years solving impossible tech problems in Bergen County">
+    <meta property="og:type" content="website">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ElectronicsStore",
+      "name": "YouBrokeIt-I'llFixIt LLC",
+      "owner": {
+        "@type": "Person",
+        "name": "Mykolas Perevicius",
+        "alumniOf": "New Jersey Institute of Technology"
+      },
+      "description": "Component-level electronics repair by NJIT Computer Science graduate",
+      "telephone": "+1-201-786-8519",
+      "email": "perevicius.mykolas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bergen County",
+        "addressRegion": "NJ"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
     <style>
         * {
@@ -20,8 +52,8 @@
         }
 
         :root {
-            --primary: #0ea5e9;
-            --primary-dark: #0284c7;
+            --primary: #0284c7;
+            --primary-dark: #075985;
             --secondary: #06b6d4;
             --accent: #7c3aed;
             --dark: #0f172a;
@@ -29,33 +61,49 @@
             --gray: #64748b;
             --success: #10b981;
             --danger: #ef4444;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --glass: rgba(255, 255, 255, 0.1);
+            --warning: #f59e0b;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--dark);
             overflow-x: hidden;
-            background: linear-gradient(to bottom, #ffffff, #f0f9ff);
+            background: #ffffff;
         }
 
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
         /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
+            position: sticky;
+            top: 42px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -69,18 +117,12 @@
 
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .logo i {
-            -webkit-text-fill-color: var(--primary);
         }
 
         .nav-links {
@@ -94,26 +136,10 @@
             color: var(--dark);
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .mobile-menu {
@@ -132,12 +158,9 @@
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            padding: 4rem 2rem;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            padding: 3rem 2rem 4rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -150,40 +173,40 @@
             right: 0;
             bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: white;
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            animation: slideInLeft 0.8s ease;
         }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
             margin-bottom: 2rem;
-            animation: slideInLeft 0.8s ease 0.2s backwards;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            animation: slideInLeft 0.8s ease 0.4s backwards;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .btn {
@@ -198,11 +221,12 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            min-height: 48px;
         }
 
         .btn-primary {
             background: white;
-            color: var(--accent);
+            color: var(--primary-dark);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
@@ -219,46 +243,33 @@
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: var(--accent);
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: slideInRight 0.8s ease;
-        }
-
-        .floating-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        /* Trust Bar */
+        .trust-bar {
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            animation: float 3s ease-in-out infinite;
-            text-align: center;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        .floating-card i {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
         }
 
-        .floating-card h3 {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .floating-card p {
-            color: var(--gray);
-        }
-
-        /* Services Section */
-        .services {
+        /* Sections */
+        section {
             padding: 5rem 2rem;
-            background: white;
         }
 
         .section-title {
@@ -268,7 +279,7 @@
 
         .section-title h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: var(--dark);
             margin-bottom: 1rem;
         }
@@ -280,186 +291,126 @@
             margin: 0 auto;
         }
 
-        .services-grid {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Services */
+        .services {
+            background: #f8fafc;
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: white;
             border-radius: 20px;
             padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            opacity: 0.9;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card:hover * {
-            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            color: white;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--dark);
-            transition: color 0.3s ease;
         }
 
         .service-card p {
             color: var(--gray);
-            transition: color 0.3s ease;
+            line-height: 1.6;
         }
 
-        /* Technical Expertise Section */
-        .expertise {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        /* About Section */
+        .about {
+            background: white;
         }
 
-        .expertise-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
         }
 
-        .expertise-grid {
+        .about-content p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .expertise-category {
-            background: white;
-            border-radius: 20px;
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            text-align: center;
         }
 
-        .expertise-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .expertise-category h3 {
-            color: var(--dark);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .expertise-category h3 i {
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--primary);
-            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tags span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
+        .stat-label {
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
             font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
         }
 
-        .skill-tags span:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
-        }
-
-        /* Process Section */
+        /* Process */
         .process {
-            padding: 5rem 2rem;
+            background: #f8fafc;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-card {
             background: white;
-        }
-
-        .process-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .process-timeline {
-            position: relative;
-            padding: 3rem 0;
-        }
-
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            transform: translateX(-50%);
-        }
-
-        .process-step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: relative;
         }
 
-        .process-step:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .step-number {
+        .process-number {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
+            top: -15px;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border-radius: 50%;
@@ -468,125 +419,121 @@
             justify-content: center;
             font-size: 1.5rem;
             font-weight: 700;
-            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
-            z-index: 1;
         }
 
-        .step-content {
-            width: 45%;
-            padding: 2rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .process-step:nth-child(even) .step-content {
-            margin-left: auto;
-        }
-
-        .step-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .step-content h3 {
-            color: var(--dark);
-            font-size: 1.4rem;
+        .process-card h3 {
+            margin-top: 2rem;
             margin-bottom: 1rem;
+            color: var(--dark);
+            font-size: 1.3rem;
         }
 
-        .step-content p {
+        .process-card p {
             color: var(--gray);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .process-timeline::before {
-                left: 30px;
-            }
-
-            .process-step,
-            .process-step:nth-child(even) {
-                flex-direction: row;
-            }
-
-            .step-number {
-                left: 30px;
-            }
-
-            .step-content {
-                width: calc(100% - 100px);
-                margin-left: 80px !important;
-            }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
         }
 
-        /* Contact Form Section */
-        .contact-section {
-            padding: 5rem 2rem;
+        /* CTA Section */
+        .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #f8fafc;
+            padding: 5rem 2rem;
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .contact-info {
-            color: white;
-        }
-
-        .contact-info h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: start;
             gap: 1rem;
         }
 
         .contact-item i {
             font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--primary);
+            margin-top: 0.25rem;
         }
 
-        .form-container {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-container h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .contact-item h4 {
             color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p, .contact-item a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
         }
 
         .form-group {
@@ -596,7 +543,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--dark);
         }
 
@@ -608,7 +555,9 @@
             border: 2px solid #e2e8f0;
             border-radius: 10px;
             font-size: 1rem;
+            font-family: inherit;
             transition: all 0.3s ease;
+            min-height: 48px;
         }
 
         .form-group input:focus,
@@ -624,55 +573,10 @@
             min-height: 120px;
         }
 
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-upload-label {
-            display: block;
-            padding: 0.75rem 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .file-upload-label:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .image-preview {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .image-preview img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #e2e8f0;
-        }
-
         .submit-btn {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border: none;
             border-radius: 10px;
@@ -680,194 +584,12 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-height: 48px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Claim Form Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: slideUp 0.3s ease;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .modal-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--dark);
-        }
-
-        .close-modal {
-            font-size: 2rem;
-            color: var(--gray);
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-modal:hover {
-            color: var(--danger);
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .reviews-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .review-stars {
-            color: #fbbf24;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            color: var(--gray);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .review-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .review-author-info h4 {
-            color: var(--dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .review-author-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
         }
 
         /* Footer */
@@ -879,113 +601,94 @@
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .footer-logo {
+        .footer-info {
+            margin-bottom: 2rem;
+        }
+
+        .footer-info h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
+        .footer-info p {
+            opacity: 0.8;
+            margin: 0.5rem 0;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-info a {
+            color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
+        .footer-info a:hover {
+            text-decoration: underline;
         }
 
         .copyright {
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
+            opacity: 0.6;
         }
 
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .floating-btn:hover {
+            transform: scale(1.1);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .floating-btn.whatsapp {
+            background: #25D366;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        .floating-btn.phone {
+            background: var(--primary);
+        }
+
+        /* Mobile Sticky Bar */
+        .mobile-sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: none;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .mobile-sticky-bar .btn {
+            flex: 1;
+            justify-content: center;
         }
 
         /* Success Message */
@@ -999,15 +702,26 @@
             padding: 1rem 2rem;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: slideInRight 0.3s ease;
             z-index: 3000;
         }
 
         .success-message.show {
             display: block;
+            animation: slideInRight 0.3s ease;
         }
 
-        /* Responsive Design */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1017,7 +731,7 @@
                 width: 100%;
                 background: white;
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1rem;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
 
@@ -1029,38 +743,56 @@
                 display: flex;
             }
 
-            .hero-container {
+            .hero {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .trust-bar {
+                overflow-x: auto;
+                justify-content: start;
+                scrollbar-width: none;
+            }
+
+            .trust-bar::-webkit-scrollbar {
+                display: none;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .services-grid,
+            .process-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .contact-container {
+                padding: 2rem 1.5rem;
             }
 
-            .hero-buttons {
-                justify-content: center;
+            .mobile-sticky-bar {
+                display: flex;
             }
 
-            .contact-container,
-            .about-container {
-                grid-template-columns: 1fr;
+            .floating-actions {
+                display: none;
             }
 
-            .about-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
+            body {
+                padding-bottom: 80px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        🚨 Device Emergency? Text: <a href="sms:+12017868519">(201) 786-8519</a> • Typical response: &lt;1 hour
+    </div>
+
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-tools"></i>
@@ -1069,11 +801,9 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" onclick="openClaimModal()">Submit Claim</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -1086,120 +816,58 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
-            <div class="hero-content">
-                <h1>We Fix What's Broken</h1>
-                <p>Expert tech repair services by Mykolas Perevicius, NJIT Computer Science graduate with over a decade of hands-on technology experience. From complex electronics to everyday items - we've got you covered.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openClaimModal()">
-                        <i class="fas fa-wrench"></i>
-                        Submit a Claim
-                    </button>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-phone"></i>
-                        Contact Us
-                    </a>
-                </div>
+            <h1>Your Device Died? I'll Bring It Back.</h1>
+            <p class="hero-subtitle">NJIT Computer Science engineer with 10+ years solving impossible tech problems. When others say "buy new," I say "let me take a look."</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-wrench"></i>
+                    Get Fixed Today
+                </a>
+                <a href="tel:+12017868519" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i>
+                    Free Diagnosis
+                </a>
             </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Tech Expert Service</h3>
-                    <p>NJIT Computer Science graduate with 10+ years experience</p>
-                    <p style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #e2e8f0; font-weight: 600; color: var(--success);"><i class="fas fa-check-circle"></i> Fully Insured Business</p>
-                </div>
+
+            <!-- Trust Bar -->
+            <div class="trust-bar">
+                <div class="trust-item">✅ NJIT CS Graduate</div>
+                <div class="trust-item">✅ 10+ Years Experience</div>
+                <div class="trust-item">✅ 5,000+ Devices Fixed</div>
+                <div class="trust-item">✅ 48hr Turnaround</div>
+                <div class="trust-item">✅ Component-Level Certified</div>
+                <div class="trust-item">✅ No Fix = No Fee</div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>We specialize in a wide range of repair services to get your items back in working order</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-microchip service-icon"></i>
-                <h3>Advanced Electronics</h3>
-                <p>Component-level repairs, circuit board diagnostics, microsoldering, and firmware recovery. Leveraging CS expertise for complex electronic issues.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-laptop-code service-icon"></i>
-                <h3>Computer & Software</h3>
-                <p>Hardware diagnostics, OS recovery, data retrieval, performance optimization. Deep understanding of system architecture and software layers.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-mobile-alt service-icon"></i>
-                <h3>Smartphone & Tablets</h3>
-                <p>Screen replacement, battery issues, water damage recovery, software troubleshooting. Expert handling of iOS and Android systems.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-gamepad service-icon"></i>
-                <h3>Gaming Systems</h3>
-                <p>Console repairs, custom modifications, thermal solutions, controller fixes. Understanding of gaming hardware from chips to cooling.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-network-wired service-icon"></i>
-                <h3>Network & Smart Home</h3>
-                <p>Router configuration, smart device setup, IoT troubleshooting, network optimization. Full-stack networking expertise.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-bolt service-icon"></i>
-                <h3>Emergency Tech Support</h3>
-                <p>24/7 emergency repairs for critical systems. Remote diagnostics available. When your tech can't wait, we're here.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Expertise Section -->
-    <section class="expertise" id="expertise">
-        <div class="expertise-container">
+        <div class="container">
             <div class="section-title">
-                <h2>Technical Expertise</h2>
-                <p>Decade of experience across the full technology stack</p>
+                <h2>Engineering Solutions for Tech Problems</h2>
+                <p>Not just repairs – systematic diagnosis and permanent fixes</p>
             </div>
-            <div class="expertise-grid">
-                <div class="expertise-category">
-                    <h3><i class="fas fa-code"></i> Programming & Software</h3>
-                    <div class="skill-tags">
-                        <span>System Diagnostics</span>
-                        <span>Data Recovery</span>
-                        <span>Firmware Development</span>
-                        <span>OS Troubleshooting</span>
-                        <span>Driver Issues</span>
-                        <span>Performance Optimization</span>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Component-Level Repair</h3>
+                    <p>I fix the unfixable. Motherboards, micro-soldering, circuit repair – what others replace, I repair.</p>
                 </div>
-                <div class="expertise-category">
-                    <h3><i class="fas fa-microchip"></i> Hardware & Electronics</h3>
-                    <div class="skill-tags">
-                        <span>Circuit Analysis</span>
-                        <span>Component Testing</span>
-                        <span>Microsoldering</span>
-                        <span>PCB Repair</span>
-                        <span>Power Systems</span>
-                        <span>Thermal Management</span>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">💾</div>
+                    <h3>Data Recovery</h3>
+                    <p>Lost isn't lost to me. Corrupted drives, deleted files, failed systems – recovered with advanced techniques.</p>
                 </div>
-                <div class="expertise-category">
-                    <h3><i class="fas fa-tools"></i> Repair Specializations</h3>
-                    <div class="skill-tags">
-                        <span>Logic Board Repair</span>
-                        <span>Screen Replacement</span>
-                        <span>Water Damage Recovery</span>
-                        <span>Battery Replacement</span>
-                        <span>Port Repair</span>
-                        <span>Vintage Tech Restoration</span>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Same-Day Device Repair</h3>
+                    <p>Phones, laptops, gaming consoles. Most repairs completed same day. I stock parts for 200+ devices.</p>
                 </div>
-                <div class="expertise-category">
-                    <h3><i class="fas fa-certificate"></i> Qualifications</h3>
-                    <div class="skill-tags">
-                        <span>B.S. Computer Science - NJIT</span>
-                        <span>10+ Years Industry Experience</span>
-                        <span>Component-Level Certified</span>
-                        <span>ESD Safe Certified</span>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>On-Site Support</h3>
+                    <p>Can't come to me? I'll come to you. Business IT support and house calls available throughout Bergen County.</p>
                 </div>
             </div>
         </div>
@@ -1207,342 +875,210 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="about-container">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Engineer Behind Your Repairs</h2>
+            </div>
             <div class="about-content">
-                <h2>About Mykolas Perevicius</h2>
-                <p>With a Computer Science degree from the prestigious New Jersey Institute of Technology (NJIT) and over a decade of hands-on technology experience, Mykolas Perevicius brings unparalleled expertise to every repair. YouBrokeIt-I'llFixIt LLC combines deep technical knowledge with practical problem-solving skills honed through years in the tech industry.</p>
-                <p>From debugging complex software issues to hardware diagnostics, circuit board repairs to data recovery - Mykolas applies the same rigorous, methodical approach learned through computer science education and professional experience. Every repair is treated as a technical challenge to be solved efficiently and permanently.</p>
-                <p>Our mission: Leverage advanced technical expertise to provide repair services that go beyond fixing - we understand, diagnose, and solve the root cause of every issue.</p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years Tech Experience</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">NJIT</div>
-                        <div class="stat-label">Computer Science Degree</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Emergency Support</div>
-                    </div>
-                </div>
+                <p>I'm Mykolas Perevicius. While others learned to swap screens, I was debugging assembly code at NJIT.</p>
+                <p>After graduating with a Computer Science degree and spending 10+ years deep in technology – from firmware development to system architecture – I realized something: most "broken" devices aren't broken. They're misunderstood.</p>
+                <p>Every device that comes through my door gets what I'd give complex code: systematic diagnosis, root cause analysis, and permanent solutions. No band-aids. No guesswork. Just engineering.</p>
             </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>NJIT Graduate</h3>
-                    <p>Computer Science expertise applied to every repair</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Devices Fixed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">48hr</span>
+                    <span class="stat-label">Avg Turnaround</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Repair Process Section -->
+    <!-- Process Section -->
     <section class="process" id="process">
-        <div class="process-container">
+        <div class="container">
             <div class="section-title">
-                <h2>Our Repair Process</h2>
-                <p>Systematic approach developed through years of CS education and industry experience</p>
+                <h2>How I Fix Your Tech</h2>
+                <p>Simple, transparent, and effective</p>
             </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Diagnostic Analysis</h3>
-                        <p>Comprehensive testing using professional diagnostic tools. Root cause analysis to identify all issues, not just symptoms.</p>
-                    </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Free Diagnosis</h3>
+                    <p>I find the real problem, not just symptoms. Comprehensive testing using professional diagnostic tools.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Technical Assessment</h3>
-                        <p>Detailed evaluation of repair feasibility, cost-benefit analysis, and timeline estimation. Full transparency on all findings.</p>
-                    </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Clear Pricing</h3>
+                    <p>You'll know the cost upfront, no surprises. Transparent quotes with detailed explanations.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Expert Repair</h3>
-                        <p>Precision repair work using industry-standard tools and techniques. Quality components and meticulous attention to detail.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Quality Testing</h3>
-                        <p>Rigorous testing protocols to ensure complete functionality. Stress testing and verification of all repaired components.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <h3>Warranty Support</h3>
-                        <p>Comprehensive warranty on all repairs. Ongoing support and preventive maintenance recommendations.</p>
-                    </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Expert Repair</h3>
+                    <p>Fixed right with 90-day warranty. Quality components and meticulous engineering-level attention.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews" id="reviews">
-        <div class="reviews-container">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
             <div class="section-title">
-                <h2>What Our Customers Say</h2>
+                <h2>What Customers Say</h2>
                 <p>Real reviews from satisfied customers across Bergen County</p>
             </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Mykolas fixed my laptop that another shop said was beyond repair. His computer science background really shows - he diagnosed a complex motherboard issue and had it working perfectly within 2 days. Highly recommend!"</p>
-                    <div class="review-author">
-                        <div class="review-avatar">JM</div>
-                        <div class="review-author-info">
-                            <h4>Jennifer Martinez</h4>
-                            <p>Hackensack, NJ</p>
-                        </div>
-                    </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Recovered 10 years of family photos from my 'dead' laptop. Miracle worker!"</p>
+                    <p class="testimonial-author">– Sarah M., Hackensack</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"My iPhone had water damage and I thought all my photos were gone. Mykolas recovered everything! Professional, knowledgeable, and honest. Worth every penny. Plus he's insured which gave me peace of mind."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">DK</div>
-                        <div class="review-author-info">
-                            <h4>David Kim</h4>
-                            <p>Fort Lee, NJ</p>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Insurance said total loss. Mykolas fixed it in 2 hours for $150. His NJIT background really shows."</p>
+                    <p class="testimonial-author">– James K., Fort Lee</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Best tech repair in Bergen County! Fixed my gaming PC and upgraded it at the same time. Great communication throughout the process. His NJIT degree really makes a difference - he knows what he's doing."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">SP</div>
-                        <div class="review-author-info">
-                            <h4>Sarah Patel</h4>
-                            <p>Paramus, NJ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Excellent service! My MacBook Pro needed a logic board repair and Mykolas handled it perfectly. Fair pricing, fast turnaround, and he explained everything in detail. This is the kind of expertise you want."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">TC</div>
-                        <div class="review-author-info">
-                            <h4>Thomas Chen</h4>
-                            <p>Ridgewood, NJ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Called him for an emergency repair on my work laptop. He responded quickly and fixed it same-day. Very professional and clearly knows his stuff. Will definitely use again!"</p>
-                    <div class="review-author">
-                        <div class="review-avatar">RL</div>
-                        <div class="review-author-info">
-                            <h4>Robert Lee</h4>
-                            <p>Teaneck, NJ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Amazing experience from start to finish. My tablet had a cracked screen and battery issues - both fixed perfectly. Mykolas is trustworthy, skilled, and his prices are very reasonable. Highly recommend to anyone in Bergen County!"</p>
-                    <div class="review-author">
-                        <div class="review-avatar">MR</div>
-                        <div class="review-author-info">
-                            <h4>Maria Rodriguez</h4>
-                            <p>Englewood, NJ</p>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Only person I trust with my gaming rig. Actual engineer, not just a tech. Knows hardware like nobody else."</p>
+                    <p class="testimonial-author">– Alex T., Paramus</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stop Replacing. Start Repairing.</h2>
+            <p>Your device problem + My engineering background = Problem solved</p>
+            <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary-dark);">
+                <i class="fas fa-wrench"></i>
+                Get Your Free Diagnosis Now
+            </a>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <div class="contact-info">
+            <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>Ready to get your items fixed? Contact us today for a free estimate and fast, professional service.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>(201) 786-8519</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>perevicius.mykolas@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Bergen County, NJ - Contact us to arrange device drop-off</p>
-                        </div>
-                    </div>
-                </div>
+                <p>Ready to fix your device? Contact me today</p>
             </div>
-            <div class="form-container">
-                <h3>Send Us a Message</h3>
-                <form id="contactForm" action="https://formspree.io/f/xpwovejz" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- Claim Modal -->
-    <div class="modal" id="claimModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Submit a Repair Claim</h2>
-                <span class="close-modal" onclick="closeClaimModal()">&times;</span>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+12017868519">(201) 786-8519</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:perevicius.mykolas@gmail.com">perevicius.mykolas@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Bergen County, NJ<br>Contact to arrange drop-off</p>
+                    </div>
+                </div>
             </div>
-            <form id="claimForm" action="https://formspree.io/f/xpwovejz" method="POST" enctype="multipart/form-data">
+
+            <form id="contactForm" action="https://formspree.io/f/xpwovejz" method="POST">
                 <div class="form-group">
-                    <label for="claimName">Full Name</label>
-                    <input type="text" id="claimName" name="name" required>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="claimEmail">Email Address</label>
-                    <input type="email" id="claimEmail" name="email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="claimPhone">Phone Number</label>
-                    <input type="tel" id="claimPhone" name="phone" required>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="itemType">Item Type</label>
-                    <select id="itemType" name="itemType" required>
-                        <option value="">Select item type...</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="appliance">Home Appliance</option>
-                        <option value="automotive">Automotive</option>
-                        <option value="furniture">Furniture</option>
-                        <option value="gaming">Gaming System</option>
+                    <label for="device">Device Type</label>
+                    <select id="device" name="device" required>
+                        <option value="">Select device type...</option>
+                        <option value="phone">Smartphone/Tablet</option>
+                        <option value="laptop">Laptop/Desktop</option>
+                        <option value="gaming">Gaming Console</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="urgency">Urgency Level</label>
-                    <select id="urgency" name="urgency" required>
-                        <option value="normal">Normal (3-5 days)</option>
-                        <option value="urgent">Urgent (1-2 days)</option>
-                        <option value="emergency">Emergency (Same day)</option>
-                    </select>
+                    <label for="message">What's the problem?</label>
+                    <textarea id="message" name="message" required placeholder="Describe what happened to your device..."></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="issue">Describe the Issue</label>
-                    <textarea id="issue" name="issue" required placeholder="Please describe what's wrong with your item..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="photos">Upload Photos (Optional)</label>
-                    <div class="file-upload">
-                        <input type="file" id="photos" name="photos" multiple accept="image/*" onchange="previewImages(event)">
-                        <label for="photos" class="file-upload-label">
-                            <i class="fas fa-camera"></i> Choose Photos
-                        </label>
-                    </div>
-                    <div class="image-preview" id="imagePreview"></div>
-                </div>
-                <button type="submit" class="submit-btn">Submit Claim</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
-    </div>
-
-    <!-- Success Message -->
-    <div class="success-message" id="successMessage">
-        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">
-                <i class="fas fa-tools"></i> YouBrokeIt-I'llFixIt LLC
-            </div>
-            <p>Expert Technology Repair Services by Mykolas Perevicius</p>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-info">
+                <h3><i class="fas fa-tools"></i> YouBrokeIt-I'llFixIt LLC</h3>
+                <p>Professional tech repair by Mykolas Perevicius</p>
+                <p>NJIT Computer Science Graduate • Fully Insured Business</p>
+                <p>Phone: <a href="tel:+12017868519">(201) 786-8519</a></p>
+                <p>Email: <a href="mailto:perevicius.mykolas@gmail.com">perevicius.mykolas@gmail.com</a></p>
+                <p>Hours: Mon-Sat 9AM-7PM • Emergency service available</p>
+                <p>Service Area: Bergen County, NJ</p>
             </div>
             <div class="copyright">
                 <p>&copy; 2024 YouBrokeIt-I'llFixIt LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="sms:+12017868519" class="floating-btn whatsapp" aria-label="Text us">
+            <i class="fas fa-comment"></i>
+        </a>
+        <a href="tel:+12017868519" class="floating-btn phone" aria-label="Call us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Sticky Bar -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:+12017868519" class="btn btn-primary">
+            <i class="fas fa-phone"></i>
+            Call Now
+        </a>
+        <a href="sms:+12017868519" class="btn btn-secondary" style="background: var(--primary); color: white; border: none;">
+            <i class="fas fa-comment"></i>
+            Text
+        </a>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> Message sent! I'll respond within 1 hour.
+    </div>
 
     <script>
         // Mobile Menu Toggle
@@ -1551,10 +1087,29 @@
 
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
         });
 
-        // Smooth Scroll for Navigation Links
+        // Close mobile menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Allow form to submit normally to Formspree
+            // Show success message after brief delay
+            setTimeout(() => {
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.add('show');
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 5000);
+            }, 100);
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1564,119 +1119,8 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                    mobileMenu.classList.remove('active');
                 }
             });
-        });
-
-        // Navbar Background on Scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
-            }
-        });
-
-        // Modal Functions
-        function openClaimModal() {
-            document.getElementById('claimModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeClaimModal() {
-            document.getElementById('claimModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('claimModal');
-            if (e.target === modal) {
-                closeClaimModal();
-            }
-        });
-
-        // Image Preview Function
-        function previewImages(event) {
-            const preview = document.getElementById('imagePreview');
-            preview.innerHTML = '';
-
-            const files = event.target.files;
-            for (let i = 0; i < files.length && i < 5; i++) {
-                const file = files[i];
-                if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        preview.appendChild(img);
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-        }
-
-        // Form Submission Handlers
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // In production, this would submit to Formspree
-            // For now, show success message
-            showSuccessMessage();
-            this.reset();
-        });
-
-        document.getElementById('claimForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // In production, this would submit to Formspree
-            // For now, show success message and close modal
-            showSuccessMessage();
-            this.reset();
-            closeClaimModal();
-            document.getElementById('imagePreview').innerHTML = '';
-        });
-
-        function showSuccessMessage() {
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.add('show');
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 5000);
-        }
-
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards and other elements
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
         });
     </script>
 </body>
