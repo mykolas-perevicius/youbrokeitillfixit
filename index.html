@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouBrokeIt-I'llFixIt LLC | Tech Repair Services by Mykolas Perevicius</title>
+    <meta name="description" content="Expert technology and electronics repair by Mykolas Perevicius, NJIT Computer Science graduate. 10+ years experience. Fast, reliable repairs backed by deep technical expertise.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #06b6d4;
+            --accent: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #ffffff, #f0f9ff);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            -webkit-text-fill-color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideInLeft 0.8s ease 0.4s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--accent);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 0.8s ease;
+        }
+
+        .floating-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: float 3s ease-in-out infinite;
+            text-align: center;
+        }
+
+        .floating-card i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .floating-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card p {
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.9;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover * {
+            color: white;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+
+        /* Technical Expertise Section */
+        .expertise {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+
+        .expertise-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .expertise-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .expertise-category h3 {
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .expertise-category h3 i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tags span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tags span:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            z-index: 1;
+        }
+
+        .step-content {
+            width: 45%;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:nth-child(even) .step-content {
+            margin-left: auto;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-content h3 {
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .step-number {
+                left: 30px;
+            }
+
+            .step-content {
+                width: calc(100% - 100px);
+                margin-left: 80px !important;
+            }
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            color: white;
+        }
+
+        .contact-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-preview {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .image-preview img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Claim Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--dark);
+        }
+
+        .close-modal {
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--danger);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: slideInRight 0.3s ease;
+            z-index: 3000;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-container,
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                YouBrokeIt-I'llFixIt
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="openClaimModal()">Submit Claim</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>We Fix What's Broken</h1>
+                <p>Expert tech repair services by Mykolas Perevicius, NJIT Computer Science graduate with over a decade of hands-on technology experience. From complex electronics to everyday items - we've got you covered.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openClaimModal()">
+                        <i class="fas fa-wrench"></i>
+                        Submit a Claim
+                    </button>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Tech Expert Service</h3>
+                    <p>NJIT Computer Science graduate with 10+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>We specialize in a wide range of repair services to get your items back in working order</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-microchip service-icon"></i>
+                <h3>Advanced Electronics</h3>
+                <p>Component-level repairs, circuit board diagnostics, microsoldering, and firmware recovery. Leveraging CS expertise for complex electronic issues.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h3>Computer & Software</h3>
+                <p>Hardware diagnostics, OS recovery, data retrieval, performance optimization. Deep understanding of system architecture and software layers.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h3>Smartphone & Tablets</h3>
+                <p>Screen replacement, battery issues, water damage recovery, software troubleshooting. Expert handling of iOS and Android systems.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gamepad service-icon"></i>
+                <h3>Gaming Systems</h3>
+                <p>Console repairs, custom modifications, thermal solutions, controller fixes. Understanding of gaming hardware from chips to cooling.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-network-wired service-icon"></i>
+                <h3>Network & Smart Home</h3>
+                <p>Router configuration, smart device setup, IoT troubleshooting, network optimization. Full-stack networking expertise.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bolt service-icon"></i>
+                <h3>Emergency Tech Support</h3>
+                <p>24/7 emergency repairs for critical systems. Remote diagnostics available. When your tech can't wait, we're here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section class="expertise" id="expertise">
+        <div class="expertise-container">
+            <div class="section-title">
+                <h2>Technical Expertise</h2>
+                <p>Decade of experience across the full technology stack</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-category">
+                    <h3><i class="fas fa-code"></i> Programming & Software</h3>
+                    <div class="skill-tags">
+                        <span>System Diagnostics</span>
+                        <span>Data Recovery</span>
+                        <span>Firmware Development</span>
+                        <span>OS Troubleshooting</span>
+                        <span>Driver Issues</span>
+                        <span>Performance Optimization</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3><i class="fas fa-microchip"></i> Hardware & Electronics</h3>
+                    <div class="skill-tags">
+                        <span>Circuit Analysis</span>
+                        <span>Component Testing</span>
+                        <span>Microsoldering</span>
+                        <span>PCB Repair</span>
+                        <span>Power Systems</span>
+                        <span>Thermal Management</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3><i class="fas fa-tools"></i> Repair Specializations</h3>
+                    <div class="skill-tags">
+                        <span>Logic Board Repair</span>
+                        <span>Screen Replacement</span>
+                        <span>Water Damage Recovery</span>
+                        <span>Battery Replacement</span>
+                        <span>Port Repair</span>
+                        <span>Vintage Tech Restoration</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3><i class="fas fa-certificate"></i> Qualifications</h3>
+                    <div class="skill-tags">
+                        <span>B.S. Computer Science - NJIT</span>
+                        <span>10+ Years Industry Experience</span>
+                        <span>Component-Level Certified</span>
+                        <span>ESD Safe Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Mykolas Perevicius</h2>
+                <p>With a Computer Science degree from the prestigious New Jersey Institute of Technology (NJIT) and over a decade of hands-on technology experience, Mykolas Perevicius brings unparalleled expertise to every repair. YouBrokeIt-I'llFixIt LLC combines deep technical knowledge with practical problem-solving skills honed through years in the tech industry.</p>
+                <p>From debugging complex software issues to hardware diagnostics, circuit board repairs to data recovery - Mykolas applies the same rigorous, methodical approach learned through computer science education and professional experience. Every repair is treated as a technical challenge to be solved efficiently and permanently.</p>
+                <p>Our mission: Leverage advanced technical expertise to provide repair services that go beyond fixing - we understand, diagnose, and solve the root cause of every issue.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Tech Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">NJIT</div>
+                        <div class="stat-label">Computer Science Degree</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>NJIT Graduate</h3>
+                    <p>Computer Science expertise applied to every repair</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repair Process Section -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-title">
+                <h2>Our Repair Process</h2>
+                <p>Systematic approach developed through years of CS education and industry experience</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Diagnostic Analysis</h3>
+                        <p>Comprehensive testing using professional diagnostic tools. Root cause analysis to identify all issues, not just symptoms.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Technical Assessment</h3>
+                        <p>Detailed evaluation of repair feasibility, cost-benefit analysis, and timeline estimation. Full transparency on all findings.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Expert Repair</h3>
+                        <p>Precision repair work using industry-standard tools and techniques. Quality components and meticulous attention to detail.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Quality Testing</h3>
+                        <p>Rigorous testing protocols to ensure complete functionality. Stress testing and verification of all repaired components.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Warranty Support</h3>
+                        <p>Comprehensive warranty on all repairs. Ongoing support and preventive maintenance recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Ready to get your items fixed? Contact us today for a free estimate and fast, professional service.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>repair@youbrokeitillfixit.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Serving the Greater Metro Area</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Claim Modal -->
+    <div class="modal" id="claimModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Submit a Repair Claim</h2>
+                <span class="close-modal" onclick="closeClaimModal()">&times;</span>
+            </div>
+            <form id="claimForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="claimName">Full Name</label>
+                    <input type="text" id="claimName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="claimEmail">Email Address</label>
+                    <input type="email" id="claimEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="claimPhone">Phone Number</label>
+                    <input type="tel" id="claimPhone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemType">Item Type</label>
+                    <select id="itemType" name="itemType" required>
+                        <option value="">Select item type...</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="appliance">Home Appliance</option>
+                        <option value="automotive">Automotive</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="gaming">Gaming System</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="urgency">Urgency Level</label>
+                    <select id="urgency" name="urgency" required>
+                        <option value="normal">Normal (3-5 days)</option>
+                        <option value="urgent">Urgent (1-2 days)</option>
+                        <option value="emergency">Emergency (Same day)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="issue">Describe the Issue</label>
+                    <textarea id="issue" name="issue" required placeholder="Please describe what's wrong with your item..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photos">Upload Photos (Optional)</label>
+                    <div class="file-upload">
+                        <input type="file" id="photos" name="photos" multiple accept="image/*" onchange="previewImages(event)">
+                        <label for="photos" class="file-upload-label">
+                            <i class="fas fa-camera"></i> Choose Photos
+                        </label>
+                    </div>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+                <button type="submit" class="submit-btn">Submit Claim</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-tools"></i> YouBrokeIt-I'llFixIt LLC
+            </div>
+            <p>Expert Technology Repair Services by Mykolas Perevicius</p>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 YouBrokeIt-I'llFixIt LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Modal Functions
+        function openClaimModal() {
+            document.getElementById('claimModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeClaimModal() {
+            document.getElementById('claimModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('claimModal');
+            if (e.target === modal) {
+                closeClaimModal();
+            }
+        });
+
+        // Image Preview Function
+        function previewImages(event) {
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+
+            const files = event.target.files;
+            for (let i = 0; i < files.length && i < 5; i++) {
+                const file = files[i];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        preview.appendChild(img);
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+        }
+
+        // Form Submission Handlers
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // In production, this would submit to Formspree
+            // For now, show success message
+            showSuccessMessage();
+            this.reset();
+        });
+
+        document.getElementById('claimForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // In production, this would submit to Formspree
+            // For now, show success message and close modal
+            showSuccessMessage();
+            this.reset();
+            closeClaimModal();
+            document.getElementById('imagePreview').innerHTML = '';
+        });
+
+        function showSuccessMessage() {
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and other elements
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
