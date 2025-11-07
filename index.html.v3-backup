@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ElectronicsStore",
       "name": "YouBrokeIt-I'llFixIt LLC",
       "owner": {
         "@type": "Person",
@@ -39,11 +39,6 @@
         "@type": "PostalAddress",
         "addressLocality": "Bergen County",
         "addressRegion": "NJ"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127"
       },
       "priceRange": "$$"
     }
@@ -67,63 +62,18 @@
             --success: #10b981;
             --danger: #ef4444;
             --warning: #f59e0b;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-card: rgba(255, 255, 255, 0.9);
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-            --animation-duration: 0.3s;
-        }
-
-        :root[data-theme="dark"] {
-            --primary: #60a5fa;
-            --primary-dark: #3b82f6;
-            --secondary: #06b6d4;
-            --accent: #a78bfa;
-            --dark: #ffffff;
-            --light: #0f172a;
-            --gray: #94a3b8;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: rgba(30, 41, 59, 0.8);
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --gradient: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
+            color: var(--dark);
             overflow-x: hidden;
-            background: var(--bg-primary);
-            transition: background-color var(--animation-duration) ease, color var(--animation-duration) ease;
+            background: #ffffff;
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Skip to content link */
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            z-index: 10000;
-        }
-
-        .skip-link:focus {
-            top: 0;
         }
 
         /* Emergency Banner */
@@ -150,11 +100,10 @@
             position: sticky;
             top: 42px;
             width: 100%;
-            background: var(--bg-card);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: all var(--animation-duration) ease;
         }
 
         .nav-container {
@@ -180,38 +129,17 @@
             display: flex;
             list-style: none;
             gap: 2rem;
-            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--dark);
             font-weight: 500;
-            transition: color var(--animation-duration) ease;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--primary);
-        }
-
-        .dark-toggle {
-            background: var(--bg-secondary);
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--animation-duration) ease;
-            font-size: 1.1rem;
-        }
-
-        .dark-toggle:hover {
-            transform: rotate(180deg) scale(1.1);
-            box-shadow: 0 0 20px var(--primary);
         }
 
         .mobile-menu {
@@ -224,19 +152,17 @@
         .mobile-menu span {
             width: 25px;
             height: 3px;
-            background: var(--text-primary);
-            transition: all var(--animation-duration) ease;
+            background: var(--dark);
+            transition: all 0.3s ease;
         }
 
-        /* Hero Section with 3D */
+        /* Hero Section */
         .hero {
             padding: 3rem 2rem 4rem;
-            background: var(--gradient);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             position: relative;
             overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
 
         .hero::before {
@@ -248,7 +174,6 @@
             bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
-            transform: translateZ(-1px) scale(2);
         }
 
         .hero-container {
@@ -291,14 +216,12 @@
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
-            transition: all var(--animation-duration) ease;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             min-height: 48px;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-primary {
@@ -321,23 +244,6 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Ripple effect */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(0);
-            animation: ripple 0.6s ease-out;
-            pointer-events: none;
-        }
-
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
         }
 
         /* Trust Bar */
@@ -374,13 +280,13 @@
         .section-title h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2rem, 4vw, 2.5rem);
-            color: var(--text-primary);
+            color: var(--dark);
             margin-bottom: 1rem;
         }
 
         .section-title p {
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -390,9 +296,9 @@
             margin: 0 auto;
         }
 
-        /* Services with 3D Effects */
+        /* Services */
         .services {
-            background: var(--bg-secondary);
+            background: #f8fafc;
         }
 
         .services-grid {
@@ -402,213 +308,199 @@
         }
 
         .service-card {
-            background: var(--bg-card);
+            background: white;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-            transform: perspective(1000px) rotateX(0) rotateY(0);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateZ(20px);
-            box-shadow:
-                0 30px 60px rgba(0, 0, 0, 0.3),
-                0 0 100px rgba(96, 165, 250, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
 
         .service-icon {
             font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 1rem;
         }
 
         .service-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: var(--dark);
         }
 
         .service-card p {
-            color: var(--text-secondary);
+            color: var(--gray);
             line-height: 1.6;
         }
 
-        /* Pricing Calculator */
-        .pricing-calculator {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-            max-width: 600px;
-            margin: 3rem auto;
+        /* About Section */
+        .about {
+            background: white;
         }
 
-        .pricing-calculator h3 {
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto 3rem;
             text-align: center;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
         }
 
-        .pricing-calculator select {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--primary);
-            border-radius: 10px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 48px;
+        .about-content p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .estimate-result {
-            margin-top: 2rem;
-            text-align: center;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
             padding: 2rem;
-            background: var(--gradient);
             border-radius: 15px;
-            color: white;
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all var(--animation-duration) ease;
+            text-align: center;
         }
 
-        .estimate-result.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .price-range {
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .estimate-note {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
+        .stat-label {
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Chat Widget */
-        .chat-trigger {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
+        /* Process */
+        .process {
+            background: #f8fafc;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .process-number {
+            position: absolute;
+            top: -15px;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transition: all var(--animation-duration) ease;
+            font-weight: 700;
         }
 
-        .chat-trigger:hover {
-            transform: scale(1.1);
+        .process-card h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-size: 1.3rem;
         }
 
-        .chat-widget {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 350px;
-            background: var(--bg-card);
+        .process-card p {
+            color: var(--gray);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            z-index: 1000;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .chat-widget.active {
-            transform: scale(1);
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
-        .chat-header {
-            background: var(--gradient);
+        .testimonial-text {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1.5rem;
+            text-align: center;
+            padding: 5rem 2rem;
         }
 
-        .chat-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .quick-replies {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .quick-replies button {
-            padding: 0.75rem 1rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: left;
-            transition: all var(--animation-duration) ease;
-            min-height: 48px;
-        }
-
-        .quick-replies button:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Scroll animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px) scale(0.95);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .animate-on-scroll.animate-in {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
         }
 
         /* Contact Section */
         .contact-section {
-            background: var(--bg-secondary);
+            background: #f8fafc;
             padding: 5rem 2rem;
         }
 
         .contact-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: var(--bg-card);
+            background: white;
             border-radius: 20px;
             padding: 3rem;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .contact-info {
@@ -631,12 +523,12 @@
         }
 
         .contact-item h4 {
-            color: var(--text-primary);
+            color: var(--dark);
             margin-bottom: 0.25rem;
         }
 
         .contact-item p, .contact-item a {
-            color: var(--text-secondary);
+            color: var(--gray);
             text-decoration: none;
         }
 
@@ -652,7 +544,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--dark);
         }
 
         .form-group input,
@@ -660,21 +552,20 @@
         .form-group select {
             width: 100%;
             padding: 0.75rem 1rem;
-            border: 2px solid var(--primary);
+            border: 2px solid #e2e8f0;
             border-radius: 10px;
             font-size: 1rem;
             font-family: inherit;
-            transition: all var(--animation-duration) ease;
+            transition: all 0.3s ease;
             min-height: 48px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
         }
 
         .form-group textarea {
@@ -685,26 +576,26 @@
         .submit-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border: none;
             border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all var(--animation-duration) ease;
+            transition: all 0.3s ease;
             min-height: 48px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
         }
 
         /* Footer */
         footer {
             background: var(--dark);
-            color: var(--light);
+            color: white;
             padding: 3rem 2rem 1.5rem;
             text-align: center;
         }
@@ -712,6 +603,10 @@
         .footer-content {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 2rem;
         }
 
         .footer-info h3 {
@@ -725,7 +620,7 @@
         }
 
         .footer-info a {
-            color: var(--light);
+            color: white;
             text-decoration: none;
         }
 
@@ -739,13 +634,51 @@
             opacity: 0.6;
         }
 
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .floating-btn.phone {
+            background: var(--primary);
+        }
+
         /* Mobile Sticky Bar */
         .mobile-sticky-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--bg-card);
+            background: white;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             padding: 1rem;
             display: none;
@@ -796,10 +729,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: var(--bg-card);
+                background: white;
                 flex-direction: column;
                 padding: 1rem;
-                box-shadow: var(--shadow-lg);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links.active {
@@ -828,7 +761,9 @@
                 padding: 3rem 1rem;
             }
 
-            .services-grid {
+            .services-grid,
+            .process-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -840,38 +775,17 @@
                 display: flex;
             }
 
-            .chat-trigger {
+            .floating-actions {
                 display: none;
             }
 
             body {
                 padding-bottom: 80px;
             }
-
-            .pricing-calculator {
-                padding: 1.5rem;
-            }
-
-            .chat-widget {
-                width: calc(100% - 40px);
-                right: 20px;
-                left: 20px;
-            }
-        }
-
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
         }
     </style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-
     <!-- Emergency Banner -->
     <div class="emergency-banner">
         🚨 Device Emergency? Text: <a href="sms:+12017868519">(201) 786-8519</a> • Typical response: &lt;1 hour
@@ -887,13 +801,9 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#calculator">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li>
-                    <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon" id="darkIcon"></i>
-                    </button>
-                </li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -939,22 +849,22 @@
                 <p>Not just repairs – systematic diagnosis and permanent fixes</p>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Component-Level Repair</h3>
                     <p>I fix the unfixable. Motherboards, micro-soldering, circuit repair – what others replace, I repair.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">💾</div>
                     <h3>Data Recovery</h3>
                     <p>Lost isn't lost to me. Corrupted drives, deleted files, failed systems – recovered with advanced techniques.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">⚡</div>
                     <h3>Same-Day Device Repair</h3>
                     <p>Phones, laptops, gaming consoles. Most repairs completed same day. I stock parts for 200+ devices.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">🏢</div>
                     <h3>On-Site Support</h3>
                     <p>Can't come to me? I'll come to you. Business IT support and house calls available throughout Bergen County.</p>
@@ -963,42 +873,101 @@
         </div>
     </section>
 
-    <!-- Pricing Calculator -->
-    <section id="calculator">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Instant Repair Estimate</h2>
-                <p>Get a ballpark price range for your repair</p>
+                <h2>The Engineer Behind Your Repairs</h2>
             </div>
-            <div class="pricing-calculator">
-                <h3>Calculate Your Repair Cost</h3>
-
-                <select id="deviceType" onchange="updateEstimate()" aria-label="Select device type">
-                    <option value="">Select Device Type</option>
-                    <option value="phone">Smartphone/Tablet</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="desktop">Desktop</option>
-                    <option value="gaming">Gaming Console</option>
-                </select>
-
-                <select id="issueType" onchange="updateEstimate()" aria-label="Select issue type">
-                    <option value="">Select Issue</option>
-                    <option value="screen">Broken Screen</option>
-                    <option value="battery">Battery Issues</option>
-                    <option value="water">Water Damage</option>
-                    <option value="software">Software Problems</option>
-                    <option value="nopower">Won't Turn On</option>
-                    <option value="data">Data Recovery</option>
-                </select>
-
-                <div class="estimate-result" id="estimateResult">
-                    <div class="price-range">
-                        $<span id="minPrice">0</span> - $<span id="maxPrice">0</span>
-                    </div>
-                    <p class="estimate-note">Final price determined after free diagnosis</p>
-                    <a href="#contact" class="btn btn-primary">Get Exact Quote</a>
+            <div class="about-content">
+                <p>I'm Mykolas Perevicius. While others learned to swap screens, I was debugging assembly code at NJIT.</p>
+                <p>After graduating with a Computer Science degree and spending 10+ years deep in technology – from firmware development to system architecture – I realized something: most "broken" devices aren't broken. They're misunderstood.</p>
+                <p>Every device that comes through my door gets what I'd give complex code: systematic diagnosis, root cause analysis, and permanent solutions. No band-aids. No guesswork. Just engineering.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Devices Fixed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">48hr</span>
+                    <span class="stat-label">Avg Turnaround</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>How I Fix Your Tech</h2>
+                <p>Simple, transparent, and effective</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Free Diagnosis</h3>
+                    <p>I find the real problem, not just symptoms. Comprehensive testing using professional diagnostic tools.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Clear Pricing</h3>
+                    <p>You'll know the cost upfront, no surprises. Transparent quotes with detailed explanations.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Expert Repair</h3>
+                    <p>Fixed right with 90-day warranty. Quality components and meticulous engineering-level attention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Customers Say</h2>
+                <p>Real reviews from satisfied customers across Bergen County</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Recovered 10 years of family photos from my 'dead' laptop. Miracle worker!"</p>
+                    <p class="testimonial-author">– Sarah M., Hackensack</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Insurance said total loss. Mykolas fixed it in 2 hours for $150. His NJIT background really shows."</p>
+                    <p class="testimonial-author">– James K., Fort Lee</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Only person I trust with my gaming rig. Actual engineer, not just a tech. Knows hardware like nobody else."</p>
+                    <p class="testimonial-author">– Alex T., Paramus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stop Replacing. Start Repairing.</h2>
+            <p>Your device problem + My engineering background = Problem solved</p>
+            <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary-dark);">
+                <i class="fas fa-wrench"></i>
+                Get Your Free Diagnosis Now
+            </a>
         </div>
     </section>
 
@@ -1084,24 +1053,14 @@
         </div>
     </footer>
 
-    <!-- Chat Widget -->
-    <div class="chat-trigger" id="chatTrigger" onclick="toggleChat()" aria-label="Open chat">
-        <i class="fas fa-comment"></i>
-    </div>
-
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-header">
-            <div class="chat-status">
-                <span class="status-dot"></span>
-                <span>Typically replies in < 5 min</span>
-            </div>
-        </div>
-        <div class="quick-replies">
-            <button onclick="quickReply('emergency')">🚨 Emergency Repair</button>
-            <button onclick="quickReply('quote')">💰 Get Quote</button>
-            <button onclick="quickReply('hours')">🕐 Hours & Location</button>
-            <button onclick="window.location.href='tel:+12017868519'">📞 Call Now</button>
-        </div>
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="sms:+12017868519" class="floating-btn whatsapp" aria-label="Text us">
+            <i class="fas fa-comment"></i>
+        </a>
+        <a href="tel:+12017868519" class="floating-btn phone" aria-label="Call us">
+            <i class="fas fa-phone"></i>
+        </a>
     </div>
 
     <!-- Mobile Sticky Bar -->
@@ -1122,25 +1081,6 @@
     </div>
 
     <script>
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const darkIcon = document.getElementById('darkIcon');
-        const root = document.documentElement;
-
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        root.setAttribute('data-theme', savedTheme);
-        darkIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-
-        darkModeToggle.addEventListener('click', () => {
-            const currentTheme = root.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            root.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            darkIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        });
-
         // Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.getElementById('navLinks');
@@ -1156,138 +1096,10 @@
             });
         });
 
-        // Ripple Effect on Buttons
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // Intersection Observer for Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate-in');
-                    }, index * 100);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Pricing Calculator
-        const pricingMatrix = {
-            phone: {
-                screen: [89, 199],
-                battery: [49, 99],
-                water: [99, 249],
-                software: [39, 79],
-                nopower: [79, 199],
-                data: [149, 399]
-            },
-            laptop: {
-                screen: [199, 499],
-                battery: [89, 189],
-                water: [199, 599],
-                software: [59, 149],
-                nopower: [99, 349],
-                data: [199, 699]
-            },
-            desktop: {
-                screen: [149, 399],
-                battery: [0, 0],
-                water: [149, 499],
-                software: [79, 199],
-                nopower: [89, 299],
-                data: [199, 799]
-            },
-            gaming: {
-                screen: [0, 0],
-                battery: [0, 0],
-                water: [149, 399],
-                software: [79, 179],
-                nopower: [99, 299],
-                data: [0, 0]
-            }
-        };
-
-        function updateEstimate() {
-            const device = document.getElementById('deviceType').value;
-            const issue = document.getElementById('issueType').value;
-
-            if (device && issue && pricingMatrix[device] && pricingMatrix[device][issue]) {
-                const [min, max] = pricingMatrix[device][issue];
-                if (min === 0 && max === 0) {
-                    return; // Not applicable
-                }
-                animatePrice('minPrice', min);
-                animatePrice('maxPrice', max);
-                document.getElementById('estimateResult').classList.add('active');
-            }
-        }
-
-        function animatePrice(elementId, targetPrice) {
-            const element = document.getElementById(elementId);
-            let currentPrice = parseInt(element.textContent) || 0;
-            const increment = (targetPrice - currentPrice) / 20;
-            let step = 0;
-
-            const interval = setInterval(() => {
-                currentPrice += increment;
-                element.textContent = Math.round(currentPrice);
-                step++;
-
-                if (step >= 20) {
-                    element.textContent = targetPrice;
-                    clearInterval(interval);
-                }
-            }, 30);
-        }
-
-        // Chat Widget
-        function toggleChat() {
-            const widget = document.getElementById('chatWidget');
-            widget.classList.toggle('active');
-        }
-
-        function quickReply(type) {
-            const messages = {
-                emergency: 'I need emergency repair service immediately!',
-                quote: 'Can I get a quote for my repair?',
-                hours: 'What are your hours and location?'
-            };
-
-            if (type === 'emergency') {
-                window.location.href = 'sms:+12017868519?body=' + encodeURIComponent(messages[type]);
-            } else {
-                window.location.href = '#contact';
-                document.getElementById('message').value = messages[type];
-            }
-            toggleChat();
-        }
-
         // Form Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Allow form to submit normally to Formspree
+            // Show success message after brief delay
             setTimeout(() => {
                 const successMsg = document.getElementById('successMessage');
                 successMsg.classList.add('show');
@@ -1309,15 +1121,6 @@
                     });
                 }
             });
-        });
-
-        // Track scroll depth (for analytics)
-        let maxScroll = 0;
-        window.addEventListener('scroll', () => {
-            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-            if (scrollPercent > maxScroll) {
-                maxScroll = scrollPercent;
-            }
         });
     </script>
 </body>
